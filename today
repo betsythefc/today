@@ -4,7 +4,7 @@ action=$1
 
 function usage {
 	echo "  $(basename $0)"
-	echo "    List tasks that are due tomorrow"
+	echo "    List tasks that are due today"
 	echo ""
 	exit
 }
