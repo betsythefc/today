@@ -1,0 +1,17 @@
+#/usr/bin/env bash
+
+action=$1
+
+function usage {
+	echo "  $(basename $0)"
+	echo "    List tasks that are due tomorrow"
+	echo ""
+	exit
+}
+
+[ "$action" = "usage" ] && usage
+
+TODAY=$(date +%Y-%m-%d)
+
+cd "$TODO_DIR"
+grep "due:$TODAY" $TODO_FILE | sed "s/due:$TODAY/due:today/g"
