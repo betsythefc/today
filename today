@@ -13,5 +13,4 @@ function usage {
 
 TODAY=$(date +%Y-%m-%d)
 
-cd "$TODO_DIR"
-grep "due:$TODAY" $TODO_FILE | sed "s/due:$TODAY/due:today/g"
+todo.sh list | grep "due:$TODAY" | sed "s/due:$TODAY/due:today/g"
